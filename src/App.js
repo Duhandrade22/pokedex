@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
 
-  const itensPerPage = 25
+  const itensPerPage = 25;
   const fetchPokemons = async () => {
     try {
       setLoading(true);
@@ -23,14 +23,14 @@ function App() {
       const results = await Promise.all(promises);
       setPokemons(results);
       setLoading(false);
-      setTotalPages(Math.ceil(data.count / itensPerPage))
+      setTotalPages(Math.ceil(data.count / itensPerPage));
     } catch (error) {
       console.log("fetchPokemons error: ", error);
     }
   };
-  useEffect (() => {
-    fetchPokemons()
-  }, [page])
+  useEffect(() => {
+    fetchPokemons();
+  }, [page]);
 
   return (
     <div>
@@ -40,7 +40,7 @@ function App() {
         pokemons={pokemons}
         loading={loading}
         page={page}
-        setpage={setPage}
+        setPage={setPage}
         totalPages={totalPages}
       />
     </div>
