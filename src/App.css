@@ -107,6 +107,12 @@ nav {
   text-transform: capitalize;
 }
 
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .App {
   text-align: center;
 }
